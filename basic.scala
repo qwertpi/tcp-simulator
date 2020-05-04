@@ -6,28 +6,28 @@ import math.pow
 object basictcp extends App {
     println("Starting TCP Handshake")
     println("Computer A is generating a random sequence number  ")
-    // sqaures then square roots to ensure it is positive
+    // squares then square roots to ensure it is positive
     var a_seq: Int = sqrt(pow(Random.nextInt(), 2)).toInt
     
     println(s"A sends SYN, seq=$a_seq, len=0")
     println("")
     readLine()
     
-    println("Computer B recivies the packet from A and will increment the recived seuqeucne number by one as part of the ACK process")
-    println("Computer B also needs to pick it's own random seuqence number and ensure this reaches A")
-    // sqaures then square roots to ensure it is positive
+    println("Computer B receives the packet from A and will increment the received sequence number by one as part of the ACK process")
+    println("Computer B also needs to pick it's own random sequence number and ensure this reaches A")
+    // squares then square roots to ensure it is positive
     var b_seq: Int = sqrt(pow(Random.nextInt(), 2)).toInt
     a_seq += 1
     println(s"B sends SYN/ACK, seq=$b_seq, ack=$a_seq, len=0")
     println("")
     readLine()
     
-    println("Computer A recives B's ACK and B's sequence number")
+    println("Computer A receives B's ACK and B's sequence number")
     b_seq += 1
-    println("Computer A will now incrmeent and ACK B's sequence number")
+    println("Computer A will now increment and ACK B's sequence number")
     println(s"A sends SYN/ACK, seq=$a_seq, ack=$b_seq, len=0")
     
-    println("TCP handshake complete, both devices are now standing by for data transmition")
+    println("TCP handshake complete, both devices are now standing by for data transmission")
     var data_size: Int = 0
     var not_done: Boolean = true
     while (not_done) {
@@ -42,13 +42,13 @@ object basictcp extends App {
             println("")
             readLine()
             
-            println("B measures the size of the data it recives and increments its ACK acordingly")
+            println("B measures the size of the data it receives and increments its ACK accordingly")
             b_seq += data_size
             println(s"A sends ACK, seq=$a_seq, ack=$b_seq, len=0")
         }
         
     }
-    println("TCP teardown")
+    println("TCP tear-down")
     println(s"A sends FIN, seq=$a_seq, ack=$b_seq")
     println("")
     readLine()
