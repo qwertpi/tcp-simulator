@@ -1,5 +1,9 @@
 # tcp-simulator
-I was trying to get my head around how TCP works so I wrote some pseudo-code and then I realized I might as well write some actual code that I can run to check if I am correct
+I was trying to get my head around how TCP works so I wrote some pseudo-code and then I realized I might as well write some actual code that I can run to check if I am correct.  
+Thanks to https://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/ for providing a source which I could reference when figuring out exactly how TCP works and also for being a source of test data.  
+The code uses one variable for both the seq of a and the ack of b which is obviously not how real TCP works but it still provides an accurate simulation, the fancy version of the code that runs as two seperate processes will have seperate variables.
+
+Feedback and pull requests are welcome
 ## Copyright
 Copyright © 2019  Rory Sharp All rights reserved.
 
@@ -18,7 +22,7 @@ For a summary of the license go to https://tldrlegal.com/license/gnu-general-pub
 * Scalac (optional)
 ## Process
 0\. Download this repo (`git clone https://github.com/qwertpi/tcp-simulator.git`)  
-1\. Either run as a script (`scala DESIREDPROGRAM.scala`) or compile (`scalac DESIREDPROGRAM.scala`) then run the compiled code (`scalac DESIREDPROGRAM`)
+1\. Either run as a script (`scala DESIREDPROGRAM.scala`) or compile (`scalac DESIREDPROGRAM.scala`) then run the compiled code (`scala DESIREDPROGRAM`)
 ## Basic.scala
 This is the simple simulation which I originaly wrote, simply press enter to advance the code when neccacry
 To run this either do `scala basic.scala` or `scalac basic.scala && scala basictcp`
