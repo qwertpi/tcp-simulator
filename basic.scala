@@ -1,13 +1,15 @@
 import scala.io.StdIn.readLine
 import util.Random
-import math.sqrt
-import math.pow
+import math.abs
 
 object basictcp extends App {
+    def seq_gen(): Int ={
+        return abs(Random.nextInt())
+    }
     println("Starting TCP Handshake")
     println("Computer A is generating a random sequence number  ")
     // squares then square roots to ensure it is positive
-    var a_seq: Int = sqrt(pow(Random.nextInt(), 2)).toInt
+    var a_seq: Int = seq_gen()
     
     println(s"A sends SYN, seq=$a_seq, len=0")
     println("")
@@ -16,7 +18,7 @@ object basictcp extends App {
     println("Computer B receives the packet from A and will increment the received sequence number by one as part of the ACK process")
     println("Computer B also needs to pick it's own random sequence number and ensure this reaches A")
     // squares then square roots to ensure it is positive
-    var b_seq: Int = sqrt(pow(Random.nextInt(), 2)).toInt
+    var b_seq: Int = seq_gen()
     a_seq += 1
     println(s"B sends SYN/ACK, seq=$b_seq, ack=$a_seq, len=0")
     println("")
@@ -54,7 +56,7 @@ object basictcp extends App {
     readLine()
     
     a_seq += 1
-    println("B increments A's seq by 1 as part of ACKing  the FIN, and confirms it is OK to FIN by sending its own FIN rrquest")
+    println("B increments A's seq by 1 as part of ACKing  the FIN, and confirms it is OK to FIN by sending its own FIN request")
     println(s"B sends FIN/ACK, seq=$b_seq, ack=$a_seq")
     println("")
     readLine()
