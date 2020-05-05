@@ -20,7 +20,7 @@ For a summary of the license go to https://tldrlegal.com/license/gnu-general-pub
 ### Prerequisites
 * Scala
 * Scalac (optional)
-## Process
+### Process
 0\. Download this repo (`git clone https://github.com/qwertpi/tcp-simulator.git`)  
 1\. Either run as a script (`scala DESIREDPROGRAM.scala`) or compile (`scalac DESIREDPROGRAM.scala`) then run the compiled code (`scala DESIREDPROGRAM`)
 ## Basic.scala
