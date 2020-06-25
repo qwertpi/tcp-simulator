@@ -5,7 +5,7 @@ The code uses one variable for both the seq of a and the ack of b which is obvio
 
 Feedback and pull requests are welcome
 ## Copyright
-Copyright © 2019  Rory Sharp All rights reserved.
+Copyright © 2020  Rory Sharp All rights reserved.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
