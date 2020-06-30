@@ -4,7 +4,7 @@ import math.abs
 
 object basictcp extends App {
     def seq_gen(): Int ={
-        return abs(Random.nextInt())
+        return abs(Random.nextInt()) % 100
     }
 
     def WaitForUser() ={
